@@ -1,4 +1,4 @@
-# hsa13-hw6-high-load-app-arch 
+# hsa13-hw6-high-load-app-architecture
 
 I chose a microservices-based architecture with event-driven communication to handle scalability, fault tolerance, and modularity efficiently.
 
