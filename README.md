@@ -59,39 +59,39 @@ I chose a microservices-based architecture with event-driven communication to ha
 12. **Logging Service:**  
     - Centralized logging for analyzing service behavior and debugging issues.
 
-## Bottlenecks and Solutions
+### Bottlenecks and Solutions
 
-### 1. Database Overload  
+#### 1. Database Overload  
 - A **single database** cannot handle a **10x increase** in read/write traffic.  
 **Solution:**  
    - Use **separate read/write databases**.  
    - Enable **replication and sharding** for scalability.
 
-### 2. Service Overload  
+#### 2. Service Overload  
 - Increased requests may **slow down services** or cause failures.  
 **Solution:**  
    - **Scale services horizontally** by adding more instances.  
    - Use **load balancing** to distribute traffic.
 
-### 3. Message Broker Overload  
+#### 3. Message Broker Overload  
 - The broker could **become a bottleneck** if not scaled.  
 **Solution:**  
    - Use a **clustered message broker** with **partitioning**.  
    - Optimize **queue handling** for high throughput.
 
-### 4. API Gateway as SPOF  
+#### 4. API Gateway as SPOF  
 - A **single API Gateway failure** stops all traffic.  
 **Solution:**  
    - Deploy **multiple API Gateway instances** with **automatic failover**.  
    - Use **load balancers** for redundancy.
 
-### 5. Media Storage Latency  
+#### 5. Media Storage Latency  
 - Serving **images/videos** from backend storage is slow.  
 **Solution:**  
    - Use a **CDN** to cache and serve media closer to users.  
    - Store all original media in **Object Storage (e.g., AWS S3, Google Cloud Storage)**.
 
-## Benefits of this Architecture
+### Benefits of this Architecture
 
 - **Scalability:** Microservices, separate read/write databases, and CDN allow for independent scaling.
 - **Performance:** Caching (both **CDN and Redis**) significantly reduces latency.
