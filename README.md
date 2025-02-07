@@ -1,9 +1,8 @@
 # hsa13-hw6-high-load-app-arch 
 
-I chose a microservices-based architecture with optional asynchronous communication (event-driven) to handle scalability, fault tolerance, and modularity efficiently.
+I chose a microservices-based architecture with event-driven communication to handle scalability, fault tolerance, and modularity efficiently.
 
-
-## Architecture Overview
+![Diagram](diagram.png)
 
 ### **Core Components:**
 1. **Users**  
@@ -51,8 +50,14 @@ I chose a microservices-based architecture with optional asynchronous communicat
    - **If cache miss:** fetches data from **Object Storage**.
 
 10. **Object Storage for Media**  
-   - The **source of truth** for all media files.  
-   - Used when the **CDN does not have a cached copy**.
+    - The **source of truth** for all media files.  
+    - Used when the **CDN does not have a cached copy**.
+
+11. **Monitoring Service:**  
+    - Tracks metrics like latency, throughput, and error rates for all services and components.
+
+12. **Logging Service:**  
+    - Centralized logging for analyzing service behavior and debugging issues.
 
 ## Bottlenecks and Solutions
 
